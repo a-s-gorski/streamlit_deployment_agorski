@@ -13,7 +13,7 @@ if env_file:
     load_dotenv(env_file)
 
 if not spacy.util.is_package("pl_core_news_sm"):
-    command = "python -m spacy download pl_core_news_sm"
+    command = "python3 -m spacy download pl_core_news_sm"
     subprocess.run(command, shell=True)
 
 
