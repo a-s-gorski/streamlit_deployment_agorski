@@ -4,7 +4,6 @@ import subprocess
 import requests
 from tqdm import tqdm
 from dotenv import load_dotenv, find_dotenv
-from src.model_deployment.utils.nlp_utils import process_tokenize_input, get_ort_session, run_inference
 import streamlit as st
 from typing import Tuple
 import spacy
@@ -18,7 +17,9 @@ if not spacy.util.is_package("pl_core_news_sm"):
     subprocess.run(command, shell=True)
 
 
-# Set page configuration
+from src.model_deployment.utils.nlp_utils import process_tokenize_input, get_ort_session, run_inference
+
+
 st.set_page_config(
     page_title="Polish Hate-Speech Detection",
     page_icon="🚫",
