@@ -11,14 +11,11 @@ import spacy
 env_file = find_dotenv()
 if env_file:
     load_dotenv(env_file)
-import logging
-logging.info("hello")
-import os
-logging.info(os.listdir())
 
-if not spacy.util.is_package("pl_core_news_sm"):
-    command = "python3 -m spacy download pl_core_news_sm"
-    subprocess.run(command, shell=True)
+
+# if not spacy.util.is_package("pl_core_news_sm"):
+#     command = "python3 -m spacy download pl_core_news_sm"
+#     subprocess.run(command, shell=True)
 
 
 from src.model_deployment.utils.nlp_utils import process_tokenize_input, get_ort_session, run_inference
