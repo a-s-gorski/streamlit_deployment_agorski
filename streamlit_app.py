@@ -29,13 +29,10 @@ st.set_page_config(
 def download_model():
     file_url = os.getenv("DROPBOX_PATH")
 
-    # Extract the file's direct download link
     direct_link = file_url.replace("www.dropbox.com", "dl.dropboxusercontent.com")
 
-    # Define the local file path where you want to save the downloaded file
     local_file_path = os.getenv("MODEL_PATH")
 
-    # Download the file with a progress bar
     response = requests.get(direct_link, stream=True)
     total_size = int(response.headers.get('content-length', 0))
 
@@ -54,7 +51,7 @@ def download_model():
     else:
         print("Failed to download the file.")
 
-# download_model()
+download_model()
 
 # Function to classify text
 def classify_text(input_text: str) -> Tuple[int, float]:
